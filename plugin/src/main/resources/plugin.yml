@@ -1,4 +1,4 @@
 name: PlayerLocations
 main: com.archmageinc.playerlocations.plugin.PlayerLocations
-version: 0.17
+version: 0.18
 api-version: 1.17
