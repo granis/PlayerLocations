@@ -1,0 +1,3 @@
+name: PlayerLocations
+main: com.archmageinc.playerlocations.plugin.bungee.BungeePlayerLocations
+version: "0.18"

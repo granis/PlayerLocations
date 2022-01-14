@@ -1,16 +1,16 @@
 package com.archmageinc.playerlocations.plugin.infohandlers;
 
 import com.archmageinc.playerlocations.plugin.PlayerLocations;
-import com.archmageinc.playerlocations.plugin.SocketServer;
+import com.archmageinc.playerlocations.plugin.BukkitSocketServer;
 import java.util.HashMap;
 import java.util.Map;
 import com.archmageinc.playerlocations.api.InfoHandler;
 
 public class ServerInfoHandler implements InfoHandler{
     PlayerLocations plugin;
-    SocketServer socketServer;
+    BukkitSocketServer socketServer;
     
-    public ServerInfoHandler(PlayerLocations plugin, SocketServer socketServer) {
+    public ServerInfoHandler(PlayerLocations plugin, BukkitSocketServer socketServer) {
         this.plugin = plugin;
         this.socketServer = socketServer;
     }
@@ -19,7 +19,10 @@ public class ServerInfoHandler implements InfoHandler{
     public Map<String, Object> getInfo() {
         Map<String, Object> map = new HashMap();
         map.put("timeOfDay", plugin.getServer().getWorlds().get(0).getTime());
-        map.put("webClients", socketServer.getClientCount());
+        
+        if(!plugin.usingBungee) {
+            map.put("webClients", socketServer.getClientCount());
+        }
         
         return map;
     }
