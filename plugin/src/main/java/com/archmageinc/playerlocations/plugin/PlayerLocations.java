@@ -79,9 +79,7 @@ public class PlayerLocations extends JavaPlugin implements InfoRegistrar {
             return;
         }
 
-        this.getLogger().info(json);
         Player player = Iterables.getFirst(Bukkit.getOnlinePlayers(), null);
-        this.getLogger().info("Sending message from: " + player.toString());
         ByteArrayDataOutput out = ByteStreams.newDataOutput();
         out.writeUTF(PLUGIN_MESSAGING_SUBCHANNEL);
         out.writeUTF(json);
