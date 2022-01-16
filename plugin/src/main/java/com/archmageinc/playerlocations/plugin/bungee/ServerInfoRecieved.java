@@ -1,20 +1,21 @@
 package com.archmageinc.playerlocations.plugin.bungee;
 
 import java.time.Duration;
-import java.time.ZonedDateTime;
+import java.time.Instant;
 
 public class ServerInfoRecieved {
     public String jsonData;
-    public ZonedDateTime recieved;
+    public Long recieved;
     
     public ServerInfoRecieved(String json) {
         this.jsonData = json;
-        this.recieved = ZonedDateTime.now();
+        Instant instantTime = Instant.now();
+        this.recieved = instantTime.getEpochSecond();
     }
 
     public int getAgeInSeconds() {
-        ZonedDateTime now = ZonedDateTime.now();
-        Duration duration = Duration.between(this.recieved, now);
-        return duration.toSecondsPart();
+        Instant instantTime = Instant.now();
+        Long now = instantTime.getEpochSecond();
+        return (int)(now-this.recieved);
     }
 }
