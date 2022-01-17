@@ -54,9 +54,10 @@ public class BungeeCoordInfoTask implements Runnable {
                         continue;
                     }
 
-                    JsonNode dimension = player.get("position").get("dimension");
-                    ((ObjectNode) player.get("position")).put("dimension",
-                            String.format("%s_%s", key, dimension.asText()));
+                    JsonNode node = player.get("position").get("world");
+                    ((ObjectNode) player.get("position")).put("world",
+                            String.format("%s_%s", key, node.asText()));
+
                     fullPlayerList.add(player);
                     playersAdded.add(playerName);
                 }

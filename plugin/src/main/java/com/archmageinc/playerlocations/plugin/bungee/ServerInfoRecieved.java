@@ -1,6 +1,5 @@
 package com.archmageinc.playerlocations.plugin.bungee;
 
-import java.time.Duration;
 import java.time.Instant;
 
 public class ServerInfoRecieved {

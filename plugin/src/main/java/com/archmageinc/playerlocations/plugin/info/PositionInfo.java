@@ -5,6 +5,7 @@ public class PositionInfo {
     Double y;
     Double z;
     String dimension;
+    String world;
 
     public Double getX() {
         return x;
@@ -39,6 +40,15 @@ public class PositionInfo {
 
     public PositionInfo setDimension(String dimension) {
         this.dimension = dimension;
+        return this;
+    }
+
+    public String getWorld() {
+        return world;
+    }
+
+    public PositionInfo setWorld(String world) {
+        this.world = world;
         return this;
     }
     

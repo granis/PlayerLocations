@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import com.archmageinc.playerlocations.api.InfoHandler;
 
 public class PlayerInfoHandler implements InfoHandler {
@@ -30,9 +31,10 @@ public class PlayerInfoHandler implements InfoHandler {
                 .setDimension(Dimension.getNamespace(player.getLocation()))
                 .setX(player.getLocation().getX())
                 .setY(player.getLocation().getY())
-                .setZ(player.getLocation().getZ()
+                .setZ(player.getLocation().getZ())
+                .setWorld(player.getWorld().getName()
             );
-            
+
             players.add((new PlayerInfo())
                 .setAir(player.getRemainingAir())
                 .setHealth(player.getHealth())
@@ -41,8 +43,9 @@ public class PlayerInfoHandler implements InfoHandler {
                 .setName(player.getDisplayName())
                 .setPosition(position)
             );
+
         });
         return map;
     }
-    
+
 }
