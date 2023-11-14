@@ -1,0 +1,8 @@
+{
+    "id": "playerlocations",
+    "name": "Player Locations",
+    "version": "0.18",
+    "dependencies": [
+    ],
+    "main": "com.archmageinc.playerlocations.plugin.velocity.VelocityPlayerLocations"
+}

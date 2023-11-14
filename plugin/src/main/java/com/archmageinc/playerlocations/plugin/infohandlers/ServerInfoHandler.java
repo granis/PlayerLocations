@@ -1,16 +1,16 @@
 package com.archmageinc.playerlocations.plugin.infohandlers;
 
 import com.archmageinc.playerlocations.plugin.PlayerLocations;
-import com.archmageinc.playerlocations.plugin.BukkitSocketServer;
+import com.archmageinc.playerlocations.plugin.AbstractSocketServer;
 import java.util.HashMap;
 import java.util.Map;
 import com.archmageinc.playerlocations.api.InfoHandler;
 
 public class ServerInfoHandler implements InfoHandler{
     PlayerLocations plugin;
-    BukkitSocketServer socketServer;
+    AbstractSocketServer socketServer;
     
-    public ServerInfoHandler(PlayerLocations plugin, BukkitSocketServer socketServer) {
+    public ServerInfoHandler(PlayerLocations plugin, AbstractSocketServer socketServer) {
         this.plugin = plugin;
         this.socketServer = socketServer;
     }

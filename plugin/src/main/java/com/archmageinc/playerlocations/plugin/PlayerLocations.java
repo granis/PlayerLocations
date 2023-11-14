@@ -24,13 +24,12 @@ public class PlayerLocations extends JavaPlugin implements InfoRegistrar {
     Set<InfoHandler> dataHandlers = new HashSet();
     InfoTask infoTask;
     public Boolean usingBungee;
-    public static final String PLUGIN_MESSAGING_CHANNEL = "BungeeCord";
-    public static final String PLUGIN_MESSAGING_SUBCHANNEL = "playerlocations";
+    public static final String PLUGIN_MESSAGING_CHANNEL = "playerlocations:main";
 
     @Override
     public void onEnable() {
         saveDefaultConfig();
-        usingBungee = this.getServer().spigot().getConfig().getBoolean("settings.bungeecord", false);
+        usingBungee = getConfig().getBoolean("bungeecord", false);
 
         if (usingBungee) {
             Bukkit.getMessenger().registerOutgoingPluginChannel(this, PLUGIN_MESSAGING_CHANNEL);
@@ -81,7 +80,6 @@ public class PlayerLocations extends JavaPlugin implements InfoRegistrar {
 
         Player player = Iterables.getFirst(Bukkit.getOnlinePlayers(), null);
         ByteArrayDataOutput out = ByteStreams.newDataOutput();
-        out.writeUTF(PLUGIN_MESSAGING_SUBCHANNEL);
         out.writeUTF(json);
         player.sendPluginMessage(this, PLUGIN_MESSAGING_CHANNEL, out.toByteArray());
     }

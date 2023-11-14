@@ -4,3 +4,4 @@ socket_server:
     tick_interval: 100
 using_file_instead: false
 using_file_path: '/tmp/playerlocations.status'
+bungeecord: false
